@@ -16,7 +16,7 @@ public var baseSwordDamage:float = 1;
 public var currMoney:int = 0;
 
 public var baseMod:float = 1.25;
-private var baseArmorMod:float = 0.9;
+private var baseArmorMod:float = 0.09;
 
 public var swordMod:float = 0;
 public var gunMod:float = 0;

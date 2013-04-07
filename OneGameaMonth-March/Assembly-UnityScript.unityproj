@@ -44,6 +44,7 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\Scripts\ActionButton.js" />
      <Compile Include="Assets\Scripts\AnimHandler.js" />
      <Compile Include="Assets\Scripts\BTN-Click.js" />
      <Compile Include="Assets\Scripts\CameraControl.js" />
@@ -70,6 +71,7 @@
      <Compile Include="Assets\Scripts\SignalSender.js" />
      <Compile Include="Assets\Scripts\SimpleBullet.js" />
      <Compile Include="Assets\Scripts\Spawner.js" />
+     <Compile Include="Assets\Scripts\TurnOn.js" />
      <Compile Include="Assets\Scripts\detectionSphere.js" />
      <None Include="Assets\NGUI\Resources\Shaders\Unlit - Depth Cutout.shader" />
      <None Include="Assets\Standard Assets\Image Effects (Pro Only)\_Sources\Shaders\_BloomAndFlares\BlendOneOne.shader" />
