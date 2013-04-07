@@ -12,7 +12,7 @@ public function dropItem(){
 	} else {
 		var randMoney : float = Mathf.Round(Random.Range(1,10));
 		for(var i : int = 0; i < randMoney; i++){
-			var pos:Vector3 = Vector3(this.transform.position.x + i, 1.5, this.transform.position.z + i);
+			var pos:Vector3 = Vector3(this.transform.position.x + Random.Range(-2,2), Random.Range(.5,3.5), this.transform.position.z + Random.Range(-2,2));
 			Spawner.Spawn (moneyDrop, pos, Quaternion.Euler(0,0,0));
 		}
 	}

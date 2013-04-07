@@ -35,7 +35,7 @@ private var _currentSTATE : 			int = 0;
 private var _targetDistPrev : 			float = 0;
 
 private var _stuckCounter : 			float = 0;
-private var _stuckCounterMax : 			float = 1;
+private var _stuckCounterMax : 			float = .4;
 
 private var _targetDetected : 			boolean = false;
 
@@ -159,36 +159,29 @@ private function Mover(p_target : Vector3)
 {
 	var dist : float = (p_target - mob.transform.position).sqrMagnitude;
 	// square the distance we compare with
-	if(dist > 50 && _targetDetected)
-	{
-		resetWanderTarget();
-		_currentSTATE = STATE.WANDER;
-	} else
-	{
-		if(dist > 1)
-		{
-			moveHandler(p_target);
-		}
-		else {
-			_stuckCounter = 0;
-			randomizeIdle();
-			p_target = mob.transform.position;
-			_currentSTATE = STATE.IDLE;
-		}
-
-		var dif : float = _targetDistPrev - dist;
-		
-		if(dif <= 0.15){
-			_stuckCounter += Time.deltaTime;
-			if(_stuckCounter >= _stuckCounterMax){
-				
-				resetWanderTarget();
-			}
-		} else {
-			_stuckCounter = 0;
-		}
-		_targetDistPrev = dist;
+	
+	if(dist > 1){
+		moveHandler(p_target);
+	} else {
+		_stuckCounter = 0;
+		randomizeIdle();
+		p_target = mob.transform.position;
+		_currentSTATE = STATE.IDLE;
 	}
+
+	var dif : float = _targetDistPrev - dist;
+		
+	if(dif <= 0.15){
+			//Debug.Log("I'm fuckin' stuck! dif = " + dif + "  my stuck counter = " + _stuckCounter);
+		_stuckCounter += Time.deltaTime;
+		if(_stuckCounter >= _stuckCounterMax){
+			_stuckCounter = 0;
+			resetWanderTarget();
+		}
+	} else {
+		_stuckCounter = 0;
+	}
+	_targetDistPrev = dist;
 }
 
 private function Attack()
@@ -264,9 +257,25 @@ public function detection( val : boolean, tran : Transform)
 	{
 		_targetDetected = true;
 		_attackTarget = tran;
+		_currentSTATE = STATE.CHASE;
 	} else {
 		_targetDetected = false;
 	}
-	
 }
+
+public function damageDetection(){
+	if(_targetDetected == false){
+		_targetDetected = true;
+		var go : GameObject = gameObject.FindWithTag("Player");
+		_attackTarget = go.transform;
+		_currentSTATE = STATE.CHASE;
+	}
+}
+
+
+function OnDrawGizmos () {
+    Gizmos.DrawIcon(this.transform.position, "FrownFaceIcon.tga");
+   	//Gizmos.DrawCube(this.transform.position, Vector3(1,1,1));
+}
+
 

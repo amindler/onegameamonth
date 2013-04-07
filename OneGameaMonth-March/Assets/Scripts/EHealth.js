@@ -20,6 +20,7 @@ function Update () {
 		dropItems = false;
 		currCount = 0;
 		Spawner.Destroy(gameObject);
+		Destroy(gameObject);
 	} else if(dropItems) {
 		currCount ++;
 	}

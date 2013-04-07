@@ -25,8 +25,13 @@ function Update () {
 function OnCollisionEnter(p_col:Collision){
 
 	var go : EHealth = p_col.gameObject.GetComponent("EHealth");
+	var goController : DroneMobMoveController = p_col.gameObject.GetComponent("DroneMobMoveController");
 	if(go != null){
 		go.HealthUpdate(DMG);
+	}
+	
+	if(goController != null){
+		goController.damageDetection();
 	}
 	
 	Spawner.Destroy (gameObject);

@@ -16,6 +16,7 @@ public var baseSwordDamage:float = 1;
 public var currMoney:int = 0;
 
 public var baseMod:float = 1.25;
+private var baseArmorMod:float = 0.9;
 
 public var swordMod:float = 0;
 public var gunMod:float = 0;
@@ -147,8 +148,15 @@ public function removeMoney(p_val:int){
 }
 
 public function damageHP(p_val:float){
-	var t_val : float = p_val * armorMod;
-	var t_dmg : int = Mathf.Round(p_val - t_val);
+	var t_val : float = 0;
+	var t_dmg : int = 0;
+	if(armorLv > 0){
+		t_val = p_val * armorMod;
+		t_dmg = Mathf.Round(p_val - t_val);
+	} else {
+		t_dmg = Mathf.Round(p_val);
+	}
+	Debug.Log("damageHP --- t_val = " + t_val + " = p_val " + p_val + " * armorMod " + armorMod + " ----- t_dmg = " + t_dmg);
 	
 	currHP -= t_dmg;
 	if(currHP <= 0){
@@ -159,7 +167,6 @@ public function damageHP(p_val:float){
 
 public function modifyHP(p_val:float){
 	var t_val : float = p_val * hpPickUpMod;
-	Debug.Log(t_val + " HP percentage value");
 	var t_hp : int = (Mathf.Round(p_val + t_val));
 	Debug.Log(t_hp + " HP TO BE ADDED");
 	currHP += t_hp;
@@ -201,7 +208,10 @@ public function upgradeArmor(){
 	if(currMoney >= armorStatCost){
 		currMoney -= armorStatCost;
 		armorLv ++;
-		armorMod = baseMod * armorLv;
+		armorMod = baseArmorMod * armorLv;
+		if(armorMod >= .9){
+			armorMod = .9;
+		}
 		armorStatCost = statBaseCost * armorLv;
 	}
 	updateStats();
@@ -221,6 +231,6 @@ private function updateStats(){
 	gunDamage = baseGunDamage + (baseGunDamage * gunMod);
 	swordDamage = baseSwordDamage + (baseSwordDamage * swordMod);
 	maxAMMO = baseAMMO + (baseAMMO * ammoMod);
-	armorMod = baseMod * armorLv;
+	//armorMod = baseArmorMod * armorLv;
 	//speed
 }
