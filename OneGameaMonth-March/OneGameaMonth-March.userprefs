@@ -1,0 +1,16 @@
+﻿<Properties>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/PlayerManager.js">
+    <Files>
+      <File FileName="Assets/DungeonCreator/DemoScripts/csDoorController.cs" Line="12" Column="27" />
+      <File FileName="Assets/Scripts/PlayerManager.js" Line="102" Column="29" />
+      <File FileName="Assets/Scripts/PCAttacks.js" Line="68" Column="31" />
+      <File FileName="Assets/Scripts/CharacterState.js" Line="15" Column="15" />
+      <File FileName="Assets/Scripts/MouseToWorld.js" Line="35" Column="4" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>
