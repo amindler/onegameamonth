@@ -1,6 +1,17 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/ItemDrop.js">
+    <Files>
+      <File FileName="Assets/Scripts/PlayerManager.js" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/CollideItem.js" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/EHealth.js" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/SimpleBullet.js" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/ItemDrop.js" Line="17" Column="30" />
+      <File FileName="Assets/Scripts/ActionButton.js" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/TurnOn.js" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/AutoAction.js" Line="12" Column="38" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>

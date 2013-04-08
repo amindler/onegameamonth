@@ -10,20 +10,20 @@ public function dropItem(){
 		droppedItems = true;
 		var num : float = Random.Range(1,11);
 		
-		if(num > 8){
-			var go : GameObject = Spawner.Spawn (itemDrop1, this.transform.position, Quaternion.Euler(0,0,0)) as GameObject;
-		} else if (num > 6){
-			var go1 : GameObject = Spawner.Spawn (itemDrop2, this.transform.position, Quaternion.Euler(0,0,0)) as GameObject;
+		if (num > 6){
+			spawnObjects(itemDrop2, 5);
 		} else {
-			dropMoney();
+			spawnObjects(itemDrop1, 3);
+			spawnObjects(moneyDrop, 30);
 		}
 	}
 }
 
-private function dropMoney(){
-	var randMoney : float = Mathf.Round(Random.Range(1,5));
-	for(var i : int = 0; i < randMoney; i++){
+private function spawnObjects(p_item:GameObject, p_amnt:float){
+	var rand:float = Mathf.Round(Random.Range(1,p_amnt));
+	
+	for(var i : int = 0; i < rand; i++){
 		var pos:Vector3 = Vector3(this.transform.position.x + Random.Range(-2,2), Random.Range(.5,3.5), this.transform.position.z + Random.Range(-2,2));
-		Spawner.Spawn (moneyDrop, pos, Quaternion.Euler(0,0,0));
+		Spawner.Spawn (p_item, pos, Quaternion.Euler(0,0,0));
 	}
 }

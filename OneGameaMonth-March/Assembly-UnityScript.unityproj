@@ -46,6 +46,7 @@
   <ItemGroup>
      <Compile Include="Assets\Scripts\ActionButton.js" />
      <Compile Include="Assets\Scripts\AnimHandler.js" />
+     <Compile Include="Assets\Scripts\AutoAction.js" />
      <Compile Include="Assets\Scripts\BTN-Click.js" />
      <Compile Include="Assets\Scripts\CameraControl.js" />
      <Compile Include="Assets\Scripts\CharacterState.js" />
