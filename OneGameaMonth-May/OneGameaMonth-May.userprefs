@@ -1,0 +1,15 @@
+﻿<Properties>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Assets/Scripts/VelocityCheck.js">
+    <Files>
+      <File FileName="Assets/ShadowRoom-Assets/Scripts/DragRigidbodyShadow.js" Line="46" Column="2" />
+      <File FileName="Assets/Assets/Scripts/LockCursor.js" Line="37" Column="6" />
+      <File FileName="Assets/Assets/Scripts/SimpleLockCursor.js" Line="10" Column="2" />
+      <File FileName="Assets/Assets/Scripts/VelocityCheck.js" Line="13" Column="48" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>
